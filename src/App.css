@@ -1,0 +1,484 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+.sticky{
+  position: sticky;
+  top: 0;
+  box-shadow: 2px 0px 10px #f0f0f0;
+}
+.wrapper{
+  width: auto;
+  height: auto;
+  text-align: center;
+  background-color: white;
+}
+.cover{
+  height: auto;
+  max-width: 1400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.disp-flex-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.disp-flex-col{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header{
+  height: auto;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+
+
+}
+.no-decoration{
+  text-decoration: none;
+  color: black;
+}
+.navBar{
+  width: auto;
+  height: auto;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.tab{
+  width: auto;
+  height: auto;
+  padding: 5px;
+}
+.hero-container{
+  width: 100%;
+  height: 90vh;
+  background-color: aliceblue;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+
+}
+.blur{
+  background-color: rgba(154, 153, 160, 0.418);
+  height: 100%;
+  width: 100%;
+}
+.hero-container p{
+  color: white;
+}
+.hero-name {
+  font-family: "Luxurious Script", cursive;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 100px;
+  color: rgb(255, 255, 255);
+}
+.couple-img{
+
+  width: 300px;
+  height: 300px;
+  background-color: red;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.center-img{
+  width: 300px;
+  height: auto;
+}
+.fancy{
+  font-family: "Luxurious Script", cursive;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 36px;
+}
+.button-primary{
+  height: auto;
+  width: auto;
+  padding: 10px 30px 10px 30px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: rgba(240, 248, 255, 0.418);
+  color: white;
+}
+
+.story{
+  max-width: 900px;  
+}
+.half-div{
+  width: 100%;
+  height: 100px;
+  background-color: #f0f0f0;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.half-div h1{
+  color: black;
+  font-size: 56px;
+}
+.destination{
+  height: auto;
+  width: 50%;
+}
+.destination iframe{
+  width: 100%;
+  height: 100%;
+}
+footer{
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.footer{
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+}
+footer{
+  color: white;
+}
+.footer-tab{
+  height: auto;
+  width: 25%;
+  min-height: 200px;
+  
+}
+.sub-holder{
+  width: 100%;
+
+}
+.sub-holder input[type="email"]{
+  height: 30px;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+  width: 60%;
+}
+.sub-holder input[type="submit"]{
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+  padding: 5px;
+  width: 30%;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px;
+  padding: 10px;
+  max-width: 1080px; /* Set max width for gallery */
+  width: 100%; /* Ensure gallery fills container */
+  margin: 0 auto; /* Horizontally center the gallery */
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for all images */
+  object-fit: cover; /* Ensure images cover the entire space */
+}
+.about-section{
+  width: 100%;
+  height: 40vh;
+}
+.contact{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+.contact img{
+  max-width: 310px;
+}
+.contact-form{
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  
+}
+.input-field{
+  width: 100%;
+  height: 30px;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 4px;
+  border: 2px solid #0f0f0f;
+
+}
+
+textarea{
+  width: 100%;
+  resize: none;
+  outline: none;
+  border-radius: 4px;
+  border: 2px solid #0f0f0f;
+}
+.blog-container{
+  width: 100%;
+  min-height: 30vh;
+}
+.blogs{
+  height: auto;
+  width: auto;
+  padding: 20px;
+}
+.the-blog{
+  height: auto;
+  max-width: 900px;
+  padding: 10px;
+
+}
+.blog-thumbnail{
+  width: 100%;
+ 
+}
+.login-section{
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+.login-form{
+  padding: 20px 10px 20px 10px;
+  height: auto;
+  width: 300px;
+
+  border-radius: 4px;
+  border: 2px solid #f0f0f0;
+  box-shadow: 2px 0px 10px #f0f0f0;
+}
+.forgot-pass{
+  color: blue;
+  background-color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.bars{
+  height: auto;
+  width: auto;
+  padding: 5px;
+  font-size: 18px;
+  color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  display: none;
+}
+.mobile-nav{
+  width: 100%;
+  background-color: white;
+  height: 100vh;
+  display: none;
+}
+
+.guest-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+.guest-heading {
+  text-align: center;
+}
+.guest-list {
+  list-style: none;
+  padding: 0;
+}
+.guest-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+.guest-photo {
+  max-width: 200px;
+  height: auto;
+ 
+  margin-right: 20px;
+}
+.guest-form {
+  margin-top: 30px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+}
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+.form-button {
+  padding: 10px 20px;
+  background-color: #0f0f0f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.form-button:hover {
+  opacity: 0.7;
+}
+@media screen and (min-width: 1600px){
+  .guest-container{
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 960px){
+      .center-img{
+      display: none;
+  }
+     .gallery{
+      gap: 0px;
+     }
+         .gallery {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 0px;
+  padding: 0px;
+  max-width: 1080px; /* Set max width for gallery */
+  width: 100%; /* Ensure gallery fills container */
+  margin: 0 auto; /* Horizontally center the gallery */
+}
+.destination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+}
+@media screen and (max-width: 780px){
+  .navBar{
+  display: none;
+}
+  .bars{
+      display: block;
+  }
+  .center-img{
+      display: none;
+  }
+  .story{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+  }
+  .half-div h1{
+      font-size: 26px;
+  }
+  .gallery {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 0px;
+  padding: 0px;
+  max-width: 1080px; /* Set max width for gallery */
+  width: 100%; /* Ensure gallery fills container */
+  margin: 0 auto; /* Horizontally center the gallery */
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.footer-tab{
+  width: 100%;
+}
+}
+@media screen and (max-width: 645px){
+  .couple-img{
+      height: 200px;
+      width: 200px;
+  }
+  .destination{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+}
+@media screen and (max-width: 455px){
+  .couple{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  .tab{
+      width: 100%;
+  }
+  .couple-img{
+      width: 90%;
+      
+  }
+  .half-div {
+      display: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+      .gallery {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  grid-gap: 10px;
+  padding: 0px;
+  max-width: 1080px; /* Set max width for gallery */
+  width: 100%; /* Ensure gallery fills container */
+  margin: 0 auto; /* Horizontally center the gallery */
+}
+.gallery img{
+  width: 100%;
+}
+.hero-name{
+  font-size: 76px;
+}
+.destination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+}
