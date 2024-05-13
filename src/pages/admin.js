@@ -1,12 +1,14 @@
-import React from "react";
-import home from "./home";
-import {firestore} from "../firebase";
+import React, { useState } from "react";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { storage } from "../firebase"; // Replace with your Firebase storage instance import
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { Link } from 'react-router-dom';
 // Admin page component
 
-function admin() {
+function Admin() {
 
+    const [errorMessage, setErrorMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
     const showEditSite = () => {
         hideAll();
         document.getElementById('edit-site').style.display = 'block';
@@ -55,7 +57,7 @@ function admin() {
         let success = document.getElementById('success');
       // Create an object with form data
       const formData = {
-      
+            
           siteName: document.getElementById('siteName').value,
           groomName: document.getElementById('groomname').value,
           brideName: document.getElementById('bridename').value,
@@ -84,6 +86,39 @@ function admin() {
       }
   };
   
+
+
+
+// handlesitedata
+const handleBlogupload = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    const db = getFirestore(); // Get a reference to the Firestore database
+    let errorMessage = document.getElementById('error');
+    let success = document.getElementById('success');
+  
+    // Create an object with only the desired data
+    const blogData = {
+      blogTitle: document.getElementById('blogTitle').value, // Assuming siteName represents the blog title
+      blogImage: document.getElementById('blogImage').files.length > 0 ? document.getElementById('blogImage').files[0].name : '',
+      blogContent: document.getElementById('blogContent').value,
+    };
+  
+
+  
+    try {
+      // Add the form data to the "formData" collection in Firestore
+      const docRef = await addDoc(collection(db, "blogData"), blogData);
+      console.log("Document written with ID: ", docRef.id);
+      success.style.display = 'block';
+      e.target.reset();
+    } catch (error) {
+      errorMessage.style.display = 'block';
+      console.error("Error adding document: ", error);
+    }
+  };
+
+
+
     return (
         <>
             <head>
@@ -215,15 +250,19 @@ function admin() {
             </div>
 
 
-            <div className="container content" id="home" style={{ display: "none" }}>
-                <button className="button btn-primary" onClick={home}>Go To Home</button>
-            </div>
+
 
             <div className="container content" id="blogs" style={{ display: "none" }}>
                 <h2>Post a Blog</h2>
                 <div className="row">
                     <div className="col-md-6">
-                        <form>
+                    <div className="alert alert-success mt-3" role="alert" id="success" style={{display:"none"}}>
+                              <p>Data saved</p>
+                              </div>
+                              <div className="alert alert-success mt-3" role="alert" style={{backgroundColor: "red",display:"none"}} id="error" >
+                              <p style={{color:"white"}}>Something went wrong</p>
+                              </div>
+                        <form onSubmit={handleBlogupload}>
                             <div className="form-group">
                                 <label htmlFor="blogTitle">Blog Title:</label>
                                 <input type="text" id="blogTitle" className="form-control" required name="blogTitle"/>
@@ -250,4 +289,4 @@ function admin() {
     );
 }
 
-export default admin;
+export default Admin;
