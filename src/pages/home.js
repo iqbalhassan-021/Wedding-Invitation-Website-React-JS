@@ -47,7 +47,7 @@ function Home() {
             <Navbar/>
             </div>
     
-             <div className="hero-container disp-flex-col" style={{backgroundImage: `url('images/${bannerImage}')`}}>
+             <div className="hero-container disp-flex-col" style={{backgroundImage: `url('${bannerImage}')`}}>
                     <div className="tab disp-flex-col blur">
                         <p className="hero-name">{siteName}</p>
                         <p>Congratulations for the wedding</p>

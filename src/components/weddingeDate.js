@@ -37,7 +37,7 @@ const Date = () => {
   return (
     <div>
       <div className="wrapper">
-        <div className="half-div" style={{backgroundImage: `url('images/${bannerImage}')`, height: "300px"}}></div>
+        <div className="half-div" style={{backgroundImage: `url('${bannerImage}')`, height: "300px"}}></div>
         <div className="half-div disp-flex-row">
           <h1 className="fancy">Wedding date</h1>
           <span style={{opacity: "0%"}}>This text is invisible.</span>

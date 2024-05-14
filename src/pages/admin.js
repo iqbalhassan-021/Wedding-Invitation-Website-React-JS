@@ -7,8 +7,14 @@ import { Link } from 'react-router-dom';
 
 function Admin() {
 
-    const [errorMessage, setErrorMessage] = useState("");
-    const [successMessage, setSuccessMessage] = useState("");
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [imageUrl, setImageUrl] = useState(null);
+
+  const handleImageChange = (event) => {
+    const selectedFile = event.target.files[0];
+    setSelectedImage(selectedFile);
+    setImageUrl(URL.createObjectURL(selectedFile)); // Simulate image preview
+  };
     const showEditSite = () => {
         hideAll();
         document.getElementById('edit-site').style.display = 'block';
@@ -67,10 +73,10 @@ function Admin() {
           instagramLink: document.getElementById('instagramLink').value,
           whatsappNumber: document.getElementById('whatsappNumber').value,
           email: document.getElementById('email').value,
-          groomImage: document.getElementById('groomImage').files.length > 0 ? document.getElementById('groomImage').files[0].name : '',
-          brideImage: document.getElementById('brideImage').files.length > 0 ? document.getElementById('brideImage').files[0].name : '',
-          weddingLocation: document.getElementById('weddinglocation').files.length > 0 ? document.getElementById('weddinglocation').files[0].name : '',
-          bannerImage: document.getElementById('bannerImage').files.length > 0 ? document.getElementById('bannerImage').files[0].name : ''
+          groomImage: document.getElementById('groomImage').value,
+          brideImage: document.getElementById('brideImage').value,
+          weddingLocation: document.getElementById('weddinglocation').value,
+          bannerImage: document.getElementById('bannerImage').value
       };
   
       try {
@@ -99,7 +105,7 @@ const handleBlogupload = async (e) => {
     // Create an object with only the desired data
     const blogData = {
       blogTitle: document.getElementById('blogTitle').value, // Assuming siteName represents the blog title
-      blogImage: document.getElementById('blogImage').files.length > 0 ? document.getElementById('blogImage').files[0].name : '',
+      blogImage: document.getElementById('blogImage').value,
       blogContent: document.getElementById('blogContent').value,
     };
   
@@ -207,19 +213,19 @@ const handleBlogupload = async (e) => {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="groomImage">Groom's Image:</label>
-                                <input type="file" id="groomImage" className="form-control-file" accept="image/*" required name="groomImage"/>
+                                <input type="url" id="groomImage" className="form-control"  required name="groomImage" placeholder="url..."/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="brideImage">Bride's Image:</label>
-                                <input type="file" id="brideImage" className="form-control-file" accept="image/*" required name="brideImage"/>
+                                <input type="url" id="brideImage" className="form-control"  required name="brideImage " placeholder="url..."/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="weddinglocation">Wedding Location:</label>
-                                <input type="file" id="weddinglocation" className="form-control-file" accept="image/*" required name="weddinglocation"/>
+                                <input type="url" id="weddinglocation" className="form-control"  required name="weddinglocation" placeholder="url..."/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="bannerImage">Banner Image:</label>
-                                <input type="file" id="bannerImage" className="form-control-file" accept="image/*" required name="bannerImage"/>
+                                <input type="url" id="bannerImage" className="form-control"  required name="bannerImage" placeholder="url..."/>
                             </div>
                             <button type="submit" className="btn btn-primary">Save Changes</button>
                         </form>
@@ -235,7 +241,7 @@ const handleBlogupload = async (e) => {
                         <form>
                             <div className="form-group">
                                 <label htmlFor="galleryImages">Select Images:</label>
-                                <input type="file" id="galleryImages" className="form-control-file" accept="image/*" multiple required name="galleryImages"/>
+                                <input type="url" id="galleryImages" className="form-control" placeholder="url..." required name="galleryImages"/>
                             </div>
                             <button type="submit" className="btn btn-primary">Add Images</button>
                         </form>
@@ -269,7 +275,7 @@ const handleBlogupload = async (e) => {
                             </div>
                             <div className="form-group">
                                 <label htmlFor="blogImage">Blog Image:</label>
-                                <input type="file" id="blogImage" className="form-control-file" accept="image/*" required name="blogImage"/>
+                                <input type="url" id="blogImage" className="form-control"required name="blogImage" placeholder="url..."/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="blogContent">Blog Content:</label>

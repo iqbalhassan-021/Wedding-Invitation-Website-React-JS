@@ -37,7 +37,7 @@ function Blog() {
 
           {blogs.slice().reverse().map((blog) => (
   <div key={blog.id} className="the-blog">
-    <img src={`images/${blog.blogImage}`} alt="hero" className="blog-thumbnail" />
+    <img src={blog.blogImage} alt="hero" className="blog-thumbnail" />
     <h1>{blog.blogTitle}</h1>
     <p>{blog.blogContent}</p>
   </div>

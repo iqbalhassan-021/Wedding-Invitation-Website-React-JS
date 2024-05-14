@@ -49,7 +49,8 @@ function Couple() {
                         <p className="fancy"> The Couple</p>
                         <div className="tab disp-flex-row couple">
                             <div className="tab couple" >
-                            <div className="couple-img" style={{backgroundImage: `url("images/${groomImage}")`}}></div>
+
+                            <div className="couple-img" style={{backgroundImage: `url("${groomImage}")`}}></div>
 
                                 <p className="fancy">
                                     The Groom 
@@ -62,7 +63,7 @@ function Couple() {
                                 <img src="couple.jpg" alt="" className="center-img" />
                             </div>
                             <div className="tab couple">
-                                <div className="couple-img" style={{backgroundImage: `url("images/${brideImage}")`}}></div>
+                                <div className="couple-img" style={{backgroundImage: `url("${brideImage}")`}}></div>
                                 <p className="fancy">
                                     The Bride 
                                 </p>

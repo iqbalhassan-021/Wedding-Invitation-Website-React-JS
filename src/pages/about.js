@@ -58,7 +58,7 @@ function About() {
                     <div className="cover disp-flex-row ">
                         <div className="tab disp-flex-row story">
                             <div className="tab destination">
-                            <div className="couple-img" style={{backgroundImage: `url("images/${weddingLocation}")`}}></div>
+                            <div className="couple-img" style={{backgroundImage: `url("${weddingLocation}")`}}></div>
                             </div>
                             <div className="tab">
                                 <p className="fancy">
