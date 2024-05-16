@@ -92,8 +92,8 @@
 .couple-img{
 
   width: 300px;
-  height: 300px;
-  background-color: red;
+  min-height: 400px;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -427,10 +427,7 @@ textarea{
 }
 }
 @media screen and (max-width: 645px){
-  .couple-img{
-      height: 200px;
-      width: 200px;
-  }
+
   .destination{
       display: flex;
       justify-content: center;
@@ -464,7 +461,7 @@ textarea{
   display: grid;
   grid-template-columns: repeat(1,1fr);
   grid-gap: 10px;
-  padding: 0px;
+  padding: 10px;
   max-width: 1080px; /* Set max width for gallery */
   width: 100%; /* Ensure gallery fills container */
   margin: 0 auto; /* Horizontally center the gallery */
