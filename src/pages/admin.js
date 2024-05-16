@@ -122,6 +122,31 @@ const handleBlogupload = async (e) => {
       console.error("Error adding document: ", error);
     }
   };
+// handlesitedata
+const handleGalleryupload = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    const db = getFirestore(); // Get a reference to the Firestore database
+    let errorMessage = document.getElementById('error');
+    let success = document.getElementById('success');
+  
+    // Create an object with only the desired data
+    const Gallery = {
+      image: document.getElementById('galleryImages').value, // Assuming siteName represents the blog title
+    };
+  
+
+  
+    try {
+      // Add the form data to the "formData" collection in Firestore
+      const docRef = await addDoc(collection(db, "Gallery"), Gallery);
+      console.log("Document written with ID: ", docRef.id);
+      success.style.display = 'block';
+      e.target.reset();
+    } catch (error) {
+      errorMessage.style.display = 'block';
+      console.error("Error adding document: ", error);
+    }
+  };
 
 
 
@@ -238,7 +263,7 @@ const handleBlogupload = async (e) => {
                 <h2>Add Images to Gallery</h2>
                 <div className="row">
                     <div className="col-md-6">
-                        <form>
+                        <form onSubmit={handleGalleryupload}>
                             <div className="form-group">
                                 <label htmlFor="galleryImages">Select Images:</label>
                                 <input type="url" id="galleryImages" className="form-control" placeholder="url..." required name="galleryImages"/>
@@ -248,9 +273,7 @@ const handleBlogupload = async (e) => {
                     </div>
                 </div>
                 <div className="row">
-        <div className="col-md-4 grid-item">
-          <img src="images/groom.jpg" className="img-fluid" alt="Image 1" />
-        </div>
+
 
       </div>
             </div>
